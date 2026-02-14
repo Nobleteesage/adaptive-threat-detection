@@ -121,7 +121,27 @@ New vulnerabilities can be evaluated instantly:
 ```bash
 python3 scripts/predict_risk.py 443 9.4
 ```
+---
 
+## 📸 Screenshots
+
+### 1. Interactive Terminal Dashboard
+![Dashboard Output](screenshots/ADAPTIVE_1.PNG)
+*Real-time vulnerability breakdown showing 8 alerts with risk score of 13*
+
+### 2. Automated Web Scanner in Action
+![Scanner Running](screenshots/ADAPTIVE_2.PNG)
+*Spider and Active scan progress tracking in real-time*
+
+### 3. Machine Learning Threat Predictions
+![ML Predictions](screenshots/ADAPTIVE_3.PNG)
+*AI-powered threat predictor with confidence scores*
+
+### 4. Professional HTML Security Report
+![HTML Report](screenshots/ADAVPTIVE_4.PNG)
+*Clean, professional HTML report with complete vulnerability details*
+
+---
 ---
 
 ## 🚨 Live Scan Alerting
