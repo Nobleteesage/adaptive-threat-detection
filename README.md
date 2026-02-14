@@ -155,7 +155,6 @@ python3 ml_models/ml_threat_predictor.py
 firefox reports/scan_report.html
 ```
 
----
 
 ## 📊 Sample Output
 
