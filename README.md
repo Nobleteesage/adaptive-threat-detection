@@ -125,6 +125,10 @@ python3 scripts/predict_risk.py 443 9.4
 
 ## 📸 Screenshots
 
+---
+
+## 📸 Screenshots
+
 ### 1. Interactive Terminal Dashboard
 ![Dashboard Output](screenshots/ADAPTIVE_1.PNG)
 *Real-time vulnerability breakdown showing 8 alerts with risk score of 13*
@@ -141,6 +145,7 @@ python3 scripts/predict_risk.py 443 9.4
 ![HTML Report](screenshots/ADAVPTIVE_4.PNG)
 *Clean, professional HTML report with complete vulnerability details*
 
+---
 ---
 ---
 
