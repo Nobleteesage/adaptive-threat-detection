@@ -154,11 +154,7 @@ python3 ml_models/ml_threat_predictor.py
 # Open HTML report
 firefox reports/scan_report.html
 ```
-![Dashboard Output](screenshots/ADAPTIVE_1.PNG)
-   ![Scanner Running](screenshots/ADAPTIVE_2.PNG)
-   ![ML Predictions](screenshots/ADAPTIVE_3.PNG)
-   ![HTML Report](screenshots/ADAVPTIVE_4.PNG)
----
+
 
 ## 📊 Sample Output
 
