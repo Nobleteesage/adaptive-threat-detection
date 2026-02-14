@@ -1,63 +1,111 @@
-# Adaptive Cybersecurity Threat Detection System
+# 🛡️ Adaptive Cybersecurity Threat Detection System v2.0
 
 ## 📌 Overview
 
-This project implements an **adaptive cybersecurity threat detection system** designed to identify, analyze, and predict security risks from network vulnerability scans. Unlike static scanners, the system integrates **machine learning** to dynamically assess and predict threat severity, making it suitable for modern, evolving threat landscapes.
+This project implements a **comprehensive adaptive cybersecurity threat detection system** that combines:
+- **Network vulnerability scanning** (Nmap)
+- **Web application security testing** (OWASP ZAP)
+- **Machine learning threat prediction**
+- **Real-time dashboards and reporting**
 
-The project was developed and tested on **Kali Linux** and is intended for **academic research, cybersecurity portfolios, and practical demonstrations**.
-
----
-
-## 🎯 Objectives
-
-* Perform live vulnerability scanning using Nmap
-* Extract and structure vulnerability intelligence (CVEs & CVSS)
-* Preprocess and classify vulnerabilities by severity
-* Quantify overall system risk
-* Train a machine-learning model for adaptive risk prediction
-* Predict severity of new threats in real time
+**NEW in v2.0:** Web security scanning, interactive dashboards, HTML reports, and enhanced ML predictions!
 
 ---
 
-## 🧠 System Architecture
+## 🎯 Key Features
 
-1. **Scanning Layer** – Nmap vulnerability scan
-2. **Parsing Layer** – XML parsing and data extraction
-3. **Preprocessing Layer** – Data cleaning and severity labeling
-4. **Risk Analysis Layer** – Risk scoring and prioritization
-5. **Machine Learning Layer** – Model training and evaluation
-6. **Prediction Layer** – Real-time severity prediction
-7. **Alerting Layer** – Live scan alerting (Critical/High)
+### Phase 1: Network Security (Original)
+✅ Nmap vulnerability scanning  
+✅ CVE and CVSS intelligence extraction  
+✅ Severity classification  
+✅ Risk scoring and analysis  
+✅ Random Forest ML model for threat prediction  
+
+### Phase 2: Web Security (NEW - v2.0)
+🆕 **OWASP ZAP automated web scanning**  
+🆕 **Real-time vulnerability detection**  
+🆕 **Interactive terminal dashboard**  
+🆕 **Beautiful HTML security reports**  
+🆕 **Enhanced ML threat predictor**  
+🆕 **Risk score visualization**  
+
+---
+
+## 🧠 Enhanced System Architecture
+```
+┌─────────────────────────────────────────────────────────┐
+│                  SCANNING LAYER                         │
+│  ┌──────────────┐              ┌──────────────┐        │
+│  │     Nmap     │              │  OWASP ZAP   │        │
+│  │   (Network)  │              │  (Web Apps)  │        │
+│  └──────────────┘              └──────────────┘        │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│              DATA PROCESSING LAYER                      │
+│  • XML/JSON parsing  • Data normalization               │
+│  • CVE extraction    • Risk classification              │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│           MACHINE LEARNING LAYER                        │
+│  • Feature extraction  • Random Forest training         │
+│  • Threat prediction   • Confidence scoring             │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│            VISUALIZATION LAYER (NEW)                    │
+│  • Terminal Dashboard  • HTML Reports                   │
+│  • Risk Breakdown      • Alert System                   │
+└─────────────────────────────────────────────────────────┘
+```
 
 ---
 
 ## 🛠 Tools & Technologies
 
-* **Operating System:** Kali Linux
-* **Scanner:** Nmap
-* **Programming Language:** Python 3
-* **Libraries:** pandas, scikit-learn, joblib
-* **Machine Learning Model:** Random Forest Classifier
+| Category | Tools |
+|----------|-------|
+| **Scanners** | Nmap, OWASP ZAP |
+| **Language** | Python 3 |
+| **ML Libraries** | scikit-learn, numpy, pandas |
+| **Web Security** | ZAP Python API (zaproxy) |
+| **Visualization** | Custom HTML/CSS, Terminal dashboards |
+| **OS** | Kali Linux |
 
 ---
 
 ## 📂 Project Structure
-
 ```
 adaptive-threat-detection/
 │
-├── data/
+├── data/                          # Scan results and datasets
 │   ├── nmap_scan.xml
 │   ├── vulnerabilities.csv
-│   └── processed_vulnerabilities.csv
+│   ├── processed_vulnerabilities.csv
+│   ├── automated_scan_results.json    (NEW)
+│   └── ml_enhanced_results.json       (NEW)
 │
-├── scripts/
+├── scripts/                       # Original Nmap scripts
 │   ├── parse_nmap.py
 │   ├── preprocess_data.py
 │   ├── risk_analysis.py
 │   ├── train_model.py
 │   ├── predict_risk.py
 │   └── live_scan_alert.py
+│
+├── zap_scanner/                   # NEW - Web security scanner
+│   └── automated_scan.py
+│
+├── ml_models/                     # NEW - Enhanced ML models
+│   └── ml_threat_predictor.py
+│
+├── dashboards/                    # NEW - Visualization tools
+│   └── dashboard.py
+│
+├── reports/                       # NEW - Report generators
+│   ├── generate_html_report.py
+│   └── scan_report.html
 │
 ├── models/
 │   └── risk_model.pkl
@@ -67,119 +115,186 @@ adaptive-threat-detection/
 
 ---
 
-## ⚙️ Methodology
+## 🚀 Quick Start
 
-### 1. Vulnerability Scanning
-
-Nmap is used with version and vulnerability detection scripts:
-
+### Prerequisites
 ```bash
+# Install dependencies
+sudo apt update
+sudo apt install nmap zaproxy python3-pip -y
+pip3 install pandas scikit-learn python-owasp-zap-v2.4 --break-system-packages
+```
+
+### Phase 1: Network Scanning (Original)
+```bash
+# Run Nmap scan
 nmap -sV --script vuln localhost -oX data/nmap_scan.xml
+
+# Process and analyze
+python3 scripts/parse_nmap.py
+python3 scripts/preprocess_data.py
+python3 scripts/risk_analysis.py
+python3 scripts/train_model.py
 ```
 
-### 2. Parsing & Extraction
-
-The XML output is parsed to extract:
-
-* Host IP
-* Open ports
-* Services
-* CVE identifiers
-* CVSS scores
-
-### 3. Data Preprocessing
-
-CVSS scores are normalized and classified into severity levels:
-
-* Low (0.0 – 3.9)
-* Medium (4.0 – 6.9)
-* High (7.0 – 8.9)
-* Critical (9.0 – 10.0)
-
-### 4. Risk Analysis
-
-The system computes:
-
-* Severity distribution
-* Average CVSS score
-* Overall weighted risk score
-* Most vulnerable service
-
-### 5. Machine Learning Model
-
-A Random Forest classifier is trained using:
-
-* Features: Port number, CVSS score
-* Label: Severity category
-
-The trained model is stored and reused for predictions.
-
-### 6. Real-Time Prediction
-
-New vulnerabilities can be evaluated instantly:
-
+### Phase 2: Web Security Scanning (NEW)
 ```bash
-python3 scripts/predict_risk.py 443 9.4
+# Terminal 1: Start ZAP
+zaproxy -daemon -host 127.0.0.1 -port 8080 -config api.key=MySecretKey123
+
+# Terminal 2: Run automated scan
+cd ~/adaptive-threat-detection
+python3 zap_scanner/automated_scan.py
+
+# View results
+python3 dashboards/dashboard.py
+python3 reports/generate_html_report.py
+python3 ml_models/ml_threat_predictor.py
+
+# Open HTML report
+firefox reports/scan_report.html
 ```
 
 ---
 
-## 🚨 Live Scan Alerting
+## 📊 Sample Output
 
-The system performs a live scan, analyzes results, and **raises alerts when Critical or High risks are detected**.
-
-Example alert output:
-
+### Terminal Dashboard
 ```
-[ALERT] Critical vulnerability detected on port 443 (CVSS: 9.4)
+============================================================
+     ADAPTIVE THREAT DETECTION - SCAN REPORT
+============================================================
+
+🎯 Target: http://testphp.vulnweb.com
+📊 Total Alerts: 8
+⚠️  Risk Score: 13
+
+============================================================
+
+📈 VULNERABILITY BREAKDOWN:
+------------------------------------------------------------
+Medium          | ███ (3)
+Low             | █████ (5)
+
+============================================================
+```
+
+### ML Predictions
+```
+🤖 MACHINE LEARNING THREAT PREDICTOR
+------------------------------------------------------------
+✓ Model trained with 108 samples
+✓ Model accuracy: 85.00%
+
+🔮 THREAT PREDICTIONS:
+1. Cross Site Scripting (Reflected)
+   Actual Risk: Medium
+   ML Predicted: Medium (Confidence: 78.5%)
+   Status: ✓ Correct prediction
 ```
 
 ---
 
-## 📊 Results
+## 🎯 Use Cases
 
-* Accurate extraction of vulnerability intelligence
-* Correct severity classification
-* Machine learning accuracy above acceptable academic thresholds
-* Successful real-time risk prediction
+1. **Academic Research** - Demonstrates ML in cybersecurity
+2. **Portfolio Projects** - Shows full-stack security skills
+3. **Penetration Testing** - Automated vulnerability assessment
+4. **Security Auditing** - Multi-layer threat detection
+5. **CTF Competitions** - Rapid vulnerability discovery
 
 ---
 
-## 🎓 Academic Relevance
+## 📈 Results & Achievements
+
+| Metric | Phase 1 (Nmap) | Phase 2 (ZAP) |
+|--------|----------------|---------------|
+| Scan Type | Network | Web Applications |
+| Vulnerabilities Detected | Variable | 8 (test scan) |
+| ML Accuracy | ~80% | ~85% |
+| Reporting | CSV | HTML + Dashboard |
+| Real-time Alerts | ✅ | ✅ |
+
+---
+
+## 🔄 Workflow
+```
+User Input (Target URL/IP)
+         ↓
+    [Scanning]
+         ↓
+   [Data Parsing]
+         ↓
+  [ML Processing]
+         ↓
+  [Risk Analysis]
+         ↓
+[Dashboard/Report]
+         ↓
+    [Alerts]
+```
+
+---
+
+## 🎓 Academic Significance
 
 This project demonstrates:
+- **Multi-layered security testing** (Network + Web)
+- **Applied machine learning** in threat intelligence
+- **Automated security workflows**
+- **Data visualization** for security metrics
+- **Risk quantification** methodologies
 
-* Practical cybersecurity tooling
-* Secure data processing pipelines
-* Applied machine learning in security
-* Risk-based decision-making
-* Adaptive threat detection concepts
-
-It is suitable for:
-
-* Master’s-level coursework
-* Cybersecurity research projects
-* Portfolio demonstrations
+Suitable for:
+- Master's cybersecurity coursework
+- Research publications
+- Industry portfolio
+- Security certifications (CEH, OSCP prep)
 
 ---
 
 ## 🔮 Future Enhancements
 
-* Integration with SIEM platforms
-* Automated mitigation suggestions
-* Live dashboard visualization
-* Continuous learning with new scan data
-* Network-wide multi-host scanning
+- [ ] API fuzzing integration
+- [ ] SIEM platform integration
+- [ ] Docker containerization
+- [ ] Multi-target parallel scanning
+- [ ] Automated remediation suggestions
+- [ ] Deep learning threat prediction
+- [ ] Cloud deployment (AWS/Azure)
+- [ ] Mobile app security testing
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Areas for improvement:
+- Additional ML algorithms
+- More visualization options
+- Integration with other scanners
+- Enhanced reporting formats
 
 ---
 
 ## 👤 Author
 
-**Babatunde Goriola-Obafemi**
-Cybersecurity | Threat Detection | Machine Learning
+**Babatunde Goriola-Obafemi**  
+Cybersecurity Researcher | Threat Detection | Machine Learning
 
 ---
 
 ## 📜 License
 
 This project is for academic and educational purposes.
+
+---
+
+## 🙏 Acknowledgments
+
+- OWASP ZAP Community
+- Nmap Security Scanner
+- scikit-learn Documentation
+
+---
+
+**⭐ Star this repo if you find it useful!**
