@@ -59,7 +59,7 @@ for alert in alerts:
 print(f"\n[!] Total Alerts Found: {len(alerts)}")
 print(f"[!] Total Risk Score: {risk_score}\n")
 
-# Save results
+# Save results as JSON
 output = {
     "target": TARGET,
     "total_alerts": len(alerts),
@@ -71,3 +71,12 @@ with open("automated_scan_results.json", "w") as f:
     json.dump(output, f, indent=4)
 
 print("[✓] Results saved to automated_scan_results.json")
+
+# Save results as XML (for DefectDojo)
+print("[*] Generating XML report for DefectDojo...")
+xml_report = zap.core.xmlreport()
+
+with open("data/zap_scan_report.xml", "w") as f:
+    f.write(xml_report)
+
+print("[✓] XML report saved to data/zap_scan_report.xml")
