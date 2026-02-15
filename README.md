@@ -265,6 +265,30 @@ Suitable for:
 
 ---
 
+Future Enhancements
+## 🔄 DefectDojo Integration
+
+This system integrates with DefectDojo for enterprise-grade vulnerability management:
+
+### Features
+- ✅ Automated vulnerability import
+- ✅ Centralized tracking across multiple scans
+- ✅ Trend analysis and metrics
+- ✅ Team collaboration
+- ✅ SLA tracking
+
+### Quick Start
+```bash
+# Start DefectDojo
+cd ~/django-DefectDojo
+docker-compose up -d
+
+# Upload scan results
+python3 defectdojo_integration/upload_to_defectdojo.py
+```
+
+See [DEFECTDOJO_INTEGRATION.md](DEFECTDOJO_INTEGRATION.md) for details.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Areas for improvement:
@@ -277,7 +301,7 @@ Contributions are welcome! Areas for improvement:
 
 ## 👤 Author
 
-**Babatunde Goriola-Obafemi**  
+**Babatunde Sukanmi Goriola-Obafemi**  
 Cybersecurity Researcher | Threat Detection | Machine Learning
 
 ---
@@ -295,5 +319,6 @@ This project is for academic and educational purposes.
 - scikit-learn Documentation
 
 ---
+
 
 **⭐ Star this repo if you find it useful!**
