@@ -1,0 +1,15 @@
+{
+    "scan_number": 20,
+    "target": "http://www.dvwa.co.uk/",
+    "timestamp": "2026-02-17T20:13:13.475409",
+    "scan_time_seconds": 63.86,
+    "total_alerts": 0,
+    "risk_score": 0,
+    "alerts": [],
+    "severity_breakdown": {
+        "High": 0,
+        "Medium": 0,
+        "Low": 0,
+        "Informational": 0
+    }
+}

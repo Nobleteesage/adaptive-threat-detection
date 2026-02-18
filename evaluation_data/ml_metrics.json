@@ -1,0 +1,39 @@
+{
+    "model_name": "Gradient Boosting",
+    "accuracy": 0.9979838709677419,
+    "training_samples": 4464,
+    "test_samples": 1488,
+    "total_vulnerabilities": 5952,
+    "confusion_matrix": [
+        [
+            518,
+            0,
+            0,
+            0
+        ],
+        [
+            2,
+            546,
+            1,
+            0
+        ],
+        [
+            0,
+            0,
+            352,
+            0
+        ],
+        [
+            0,
+            0,
+            0,
+            69
+        ]
+    ],
+    "class_distribution": {
+        "Informational": 2073,
+        "Low": 2196,
+        "Medium": 1408,
+        "High": 275
+    }
+}

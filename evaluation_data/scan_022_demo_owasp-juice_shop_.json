@@ -1,0 +1,15 @@
+{
+    "scan_number": 22,
+    "target": "http://demo.owasp-juice.shop/",
+    "timestamp": "2026-02-17T20:14:46.062552",
+    "scan_time_seconds": 30.02,
+    "total_alerts": 0,
+    "risk_score": 0,
+    "alerts": [],
+    "severity_breakdown": {
+        "High": 0,
+        "Medium": 0,
+        "Low": 0,
+        "Informational": 0
+    }
+}

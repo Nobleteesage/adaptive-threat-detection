@@ -5,11 +5,14 @@ import json
 # Configuration
 ZAP_API_KEY = 'MySecretKey123'
 ZAP_ADDRESS = '127.0.0.1'
-ZAP_PORT = 8080
+ZAP_PORT = 8090
 TARGET = 'http://example.com'
 
 # Initialize ZAP
 zap = ZAPv2(apikey=ZAP_API_KEY, proxies={
+    'http': 'http://127.0.0.1:8090',
+    'https': 'http://127.0.0.1:8090'
+})
     'http': f'http://{ZAP_ADDRESS}:{ZAP_PORT}',
     'https': f'http://{ZAP_ADDRESS}:{ZAP_PORT}'
 })

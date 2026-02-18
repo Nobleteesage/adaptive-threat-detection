@@ -1,0 +1,15 @@
+{
+    "scan_number": 21,
+    "target": "http://scanme.nmap.org/",
+    "timestamp": "2026-02-17T20:14:01.038882",
+    "scan_time_seconds": 32.56,
+    "total_alerts": 0,
+    "risk_score": 0,
+    "alerts": [],
+    "severity_breakdown": {
+        "High": 0,
+        "Medium": 0,
+        "Low": 0,
+        "Informational": 0
+    }
+}
