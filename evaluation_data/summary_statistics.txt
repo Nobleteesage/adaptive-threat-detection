@@ -1,0 +1,14 @@
+
+EXPERIMENTAL RESULTS SUMMARY
+==================================================
+
+Total Targets Scanned:           23
+Total Vulnerabilities Found:     5952
+Average Vulnerabilities/Target:  258.8
+Average Risk Score:              338.91
+Average Scan Time:               23.6 minutes
+ML Classification Accuracy:      99.8%
+Training Samples:                4464
+Test Samples:                    1488
+
+==================================================
